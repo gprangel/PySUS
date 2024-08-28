@@ -75,7 +75,7 @@ class SIA(Database):
             if "_" in file.name:
                 name, _ = file.name.split("_")
                 digits = ''.join([d for d in name if d.isdigit()])
-            chars, _ = file.name.split(digits)
+            chars = file.name.split(digits)
             year, month = digits[:2], digits[2:]
             group, uf = chars[:-2].upper(), chars[-2:].upper()
             return group, uf, zfill_year(year), month
